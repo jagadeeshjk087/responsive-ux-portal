@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,5 +100,58 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Simple Click Animations for all interactive elements */
+@layer utilities {
+  /* Button animations */
+  button {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  button:active {
+    @apply scale-95;
+  }
+  
+  /* Link animations */
+  a {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  a:active {
+    @apply scale-95;
+  }
+  
+  /* Clickable elements with pointer cursor */
+  [role="button"], 
+  .cursor-pointer {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  [role="button"]:active, 
+  .cursor-pointer:active {
+    @apply scale-95;
+  }
+  
+  /* Social media icons and interactive icons */
+  svg:hover {
+    @apply transition-transform duration-200;
+  }
+  
+  /* Cards and project items */
+  .group:active {
+    @apply scale-[0.98];
+  }
+  
+  /* Navigation menu items */
+  nav button:active,
+  nav a:active {
+    @apply scale-95 brightness-90;
+  }
+  
+  /* Special handling for gradient buttons */
+  .bg-gradient-to-r:active {
+    @apply scale-95 brightness-110;
   }
 }
