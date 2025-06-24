@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,14 @@ const Header = () => {
     }
   };
 
+  const handleResumeDownload = () => {
+    // You can replace this with your actual resume file path
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Replace with your resume file path
+    link.download = 'John_Doe_Resume.pdf';
+    link.click();
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
@@ -33,7 +42,7 @@ const Header = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
@@ -44,6 +53,13 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
+            <Button
+              onClick={handleResumeDownload}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2"
+            >
+              <Download size={16} />
+              Resume
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,6 +83,13 @@ const Header = () => {
                 {item}
               </button>
             ))}
+            <Button
+              onClick={handleResumeDownload}
+              className="mx-4 mt-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2 w-auto"
+            >
+              <Download size={16} />
+              Resume
+            </Button>
           </div>
         )}
       </nav>
