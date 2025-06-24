@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 const Skills = () => {
@@ -7,12 +6,12 @@ const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { name: 'React.js', level: 95, color: 'from-blue-500 to-cyan-500', icon: '⚛️' },
-    { name: 'JavaScript/TypeScript', level: 90, color: 'from-yellow-500 to-orange-500', icon: '🚀' },
+    { name: 'React JS', level: 95, color: 'from-blue-500 to-cyan-500', icon: '⚛️' },
+    { name: 'JavaScript', level: 90, color: 'from-yellow-500 to-orange-500', icon: '🚀' },
+    { name: 'HTML/CSS', level: 88, color: 'from-orange-500 to-red-500', icon: '🎨' },
     { name: 'Node.js', level: 85, color: 'from-green-500 to-emerald-500', icon: '🟢' },
-    { name: 'Python', level: 80, color: 'from-purple-500 to-pink-500', icon: '🐍' },
-    { name: 'UI/UX Design', level: 88, color: 'from-pink-500 to-rose-500', icon: '🎨' },
-    { name: 'Database Design', level: 82, color: 'from-indigo-500 to-purple-500', icon: '🗄️' },
+    { name: 'Express.js', level: 82, color: 'from-purple-500 to-pink-500', icon: '⚡' },
+    { name: 'MongoDB', level: 80, color: 'from-indigo-500 to-purple-500', icon: '🗄️' },
   ];
 
   useEffect(() => {
@@ -121,7 +120,7 @@ const Skills = () => {
                 <h3 className="text-xl font-bold text-white mb-4">Frontend</h3>
                 <p className="text-gray-300 text-sm mb-4">Creating beautiful, responsive user interfaces</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {['React', 'Vue.js', 'Angular', 'Tailwind CSS'].map((tech) => (
+                  {['React JS', 'JavaScript', 'HTML/CSS'].map((tech) => (
                     <span key={tech} className="bg-white/10 text-white px-2 py-1 rounded-full text-xs">
                       {tech}
                     </span>
@@ -138,7 +137,7 @@ const Skills = () => {
                 <h3 className="text-xl font-bold text-white mb-4">Backend</h3>
                 <p className="text-gray-300 text-sm mb-4">Building robust server-side applications</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {['Node.js', 'Express', 'Python', 'MongoDB'].map((tech) => (
+                  {['Node.js', 'Express.js', 'MongoDB'].map((tech) => (
                     <span key={tech} className="bg-white/10 text-white px-2 py-1 rounded-full text-xs">
                       {tech}
                     </span>
@@ -152,10 +151,10 @@ const Skills = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🛠️</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Tools & DevOps</h3>
-                <p className="text-gray-300 text-sm mb-4">Streamlining development workflows</p>
+                <h3 className="text-xl font-bold text-white mb-4">Tools & Development</h3>
+                <p className="text-gray-300 text-sm mb-4">Modern development tools and practices</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {['Docker', 'AWS', 'Git', 'Figma'].map((tech) => (
+                  {['Git', 'VS Code', 'NPM', 'REST APIs'].map((tech) => (
                     <span key={tech} className="bg-white/10 text-white px-2 py-1 rounded-full text-xs">
                       {tech}
                     </span>
@@ -170,8 +169,8 @@ const Skills = () => {
             <h3 className="text-2xl font-semibold text-white mb-8">Technologies I Work With</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                'React', 'Vue.js', 'Angular', 'Node.js', 'Express', 'MongoDB',
-                'PostgreSQL', 'Docker', 'AWS', 'Git', 'Figma', 'Tailwind CSS'
+                'React JS', 'JavaScript', 'HTML/CSS', 'Node.js', 'Express.js', 'MongoDB',
+                'Git', 'REST APIs', 'JSON', 'NPM', 'VS Code', 'Responsive Design'
               ].map((tech, index) => (
                 <span
                   key={tech}
