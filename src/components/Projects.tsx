@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Code, Projector } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,7 @@ const Projects = () => {
       description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include product management, user authentication, and payment processing.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       image: '/placeholder.svg',
-      demoLink: '#',
+      demoLink: '/gallery/e-commerce',
       codeLink: '#',
       gradient: 'from-purple-500 to-pink-500'
     },
@@ -21,7 +22,7 @@ const Projects = () => {
       description: 'Collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
       technologies: ['Vue.js', 'Socket.io', 'Express', 'PostgreSQL'],
       image: '/placeholder.svg',
-      demoLink: '#',
+      demoLink: '/gallery/task-management',
       codeLink: '#',
       gradient: 'from-blue-500 to-cyan-500'
     },
@@ -30,7 +31,7 @@ const Projects = () => {
       description: 'Analytics dashboard for social media management with beautiful charts, real-time data, and automated reporting features.',
       technologies: ['React', 'D3.js', 'Python', 'FastAPI'],
       image: '/placeholder.svg',
-      demoLink: '#',
+      demoLink: '/gallery/social-dashboard',
       codeLink: '#',
       gradient: 'from-green-500 to-emerald-500'
     },
@@ -101,14 +102,14 @@ const Projects = () => {
                   </div>
 
                   <div className="flex gap-4">
-                    <a
-                      href={project.demoLink}
+                    <Link
+                      to={project.demoLink}
                       className="flex items-center text-purple-400 hover:text-purple-300 transition-colors group/link"
                     >
                       <Projector size={18} className="mr-2" />
                       <span className="mr-1">Demo</span>
                       <ArrowRight size={16} className="transform group-hover/link:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                     <a
                       href={project.codeLink}
                       className="flex items-center text-gray-400 hover:text-white transition-colors group/link"
