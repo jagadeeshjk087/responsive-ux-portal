@@ -39,8 +39,18 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Frontend email functionality using mailto
     try {
+      const subject = encodeURIComponent(`Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoUrl = `mailto:john.doe@example.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoUrl;
+      
+      // Simulate processing time
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
@@ -54,7 +64,7 @@ const Contact = () => {
 
   return (
     <section ref={sectionRef} id="contact" className="py-20">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div className={`transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
@@ -171,10 +181,10 @@ const Contact = () => {
                 </button>
 
                 {submitStatus === 'success' && (
-                  <p className="text-green-400 text-center">Message sent successfully!</p>
+                  <p className="text-green-400 text-center">Email client opened! Message will be sent from your email app.</p>
                 )}
                 {submitStatus === 'error' && (
-                  <p className="text-red-400 text-center">Failed to send message. Please try again.</p>
+                  <p className="text-red-400 text-center">Unable to open email client. Please send manually to john.doe@example.com</p>
                 )}
               </div>
             </form>

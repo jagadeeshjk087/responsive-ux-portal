@@ -35,7 +35,7 @@ const Header = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
     }`}>
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="w-full max-w-7xl mx-auto px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white">
             <span className="text-purple-400">Port</span>folio
@@ -73,7 +73,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-slate-800/95 rounded-lg backdrop-blur-sm">
+          <div className="md:hidden mt-4 py-4 bg-slate-800/95 rounded-lg backdrop-blur-sm mx-6">
             {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
